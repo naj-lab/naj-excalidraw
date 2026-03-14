@@ -16,7 +16,7 @@ jobs:
     with:
       image_name: wilgnerjo/naj-lab
       dockerfile_path: ./Dockerfile
-      folderName: naj-crypto-price-service
+      folderName: naj-excalidraw
       ghToken: naj-lab-github-standard-token
     secrets:
       DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
