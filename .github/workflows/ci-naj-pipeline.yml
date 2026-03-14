@@ -1,0 +1,23 @@
+name: naj-crypto-price-service-CI-Pipeline
+
+on:
+  workflow_dispatch:
+
+permissions:
+  packages: write
+  contents: write # to be able to publish a GitHub release
+  issues: write # to be able to comment on released issues
+  pull-requests: write # to be able to comment on released pull requests
+  id-token: write # to enable use of OIDC for npm provenance
+
+jobs:
+  ci:
+    uses: naj-lab/naj-cicd/.github/workflows/ci-ms.yml@main
+    with:
+      image_name: wilgnerjo/naj-lab
+      dockerfile_path: ./Dockerfile
+      folderName: naj-crypto-price-service
+      ghToken: naj-lab-github-standard-token
+    secrets:
+      DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+      STANDARD_GITHUB_TOKEN: ${{ secrets.STANDARD_GITHUB_TOKEN }}
