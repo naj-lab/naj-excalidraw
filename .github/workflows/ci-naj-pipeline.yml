@@ -1,4 +1,4 @@
-name: naj-crypto-price-service-CI-Pipeline
+name: naj-excalidraw-CI-Pipeline
 
 on:
   workflow_dispatch:
